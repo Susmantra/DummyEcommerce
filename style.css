@@ -1,0 +1,124 @@
+* {
+  box-sizing: border-box;
+  font-size: 1.5rem;
+}
+
+body {
+  margin: 0;
+}
+
+.wrapper {
+  display: grid;
+  grid-template-areas:
+    "header header header"
+    "h1 h1 h1"
+    "banner banner bb1"
+    "banner banner bb2"
+    "side-menu main main"
+    "tags main main"
+    "recent main main"
+    "footer footer footer";
+}
+
+.wrapper > * {
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+}
+
+.header {
+  background: rgb(177, 118, 118);
+  grid-area: header;
+}
+
+h1 {
+  background: rgb(123, 114, 227);
+  grid-area: h1;
+}
+
+.banner {
+  background: rgb(84, 176, 59);
+  grid-area: banner;
+}
+
+.bb1 {
+  background: rgb(173, 176, 106);
+  grid-area: bb1;
+}
+
+.bb2 {
+  background: rgb(131, 58, 86);
+  grid-area: bb2;
+}
+
+.side-menu {
+  background: rgb(76, 123, 159);
+  grid-area: side-menu;
+}
+
+.tags {
+  background: rgb(200, 128, 69);
+  grid-area: tags;
+}
+
+.recent {
+  background: rgb(216, 64, 64);
+  grid-area: recent;
+}
+
+.main {
+  background: rgb(197, 207, 85);
+  grid-area: main;
+  background: linear-gradient(to right, pink, purple, blue);
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
+.main div {
+  background: white;
+  min-width: 150px;
+  height: 200px;
+  margin: 1rem;
+  padding: 1rem;
+  border-radius: 9%;
+}
+
+footer {
+  background: #000;
+  color: white;
+  grid-area: footer;
+}
+
+@media (max-width: 768px) {
+  .wrapper {
+    display: grid;
+    grid-template-areas:
+      "header header "
+      "h1 h1"
+      "banner banner"
+      "bb1 bb2"
+      "side-menu side-menu"
+      "main main"
+      "tags recent"
+      "footer footer";
+  }
+}
+
+@media (max-width: 550px) {
+  .wrapper {
+    display: grid;
+    grid-template-areas:
+      "header"
+      "h1"
+      "banner"
+      "bb1"
+      "bb2"
+      "side-menu"
+      "main"
+      "tags"
+      "recent"
+      "footer";
+  }
+}
